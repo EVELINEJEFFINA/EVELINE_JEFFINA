@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eveline Jeffina V - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #f0f0f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #fff;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 15px 20px;
+    }
+    nav ul li {
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    nav ul li a {
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+      background: #ffcc00;
+      color: #000;
+      font-weight: 700;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 110px auto 50px auto;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 18px;
+      padding: 45px 55px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      backdrop-filter: blur(15px);
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(25px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    header h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffcc00;
+      text-shadow: 1.5px 1.5px 8px rgba(255, 204, 0, 0.85);
+      margin-bottom: 10px;
+    }
+    header p {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #ddd;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 45px;
+    }
+    section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffcc00;
+      border-bottom: 3.5px solid #ffcc00;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      letter-spacing: 1.2px;
+    }
+    section p, section li {
+      font-weight: 300;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "•";
+      color: #ffcc00;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    /* Lists with pills */
+    .skills-list, .languages-list, .courses-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .skills-list li, .languages-list li, .courses-list li {
+      background: #2a5298;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 0 12px #ffcc00;
+      transition: background 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .skills-list li:hover, .languages-list li:hover, .courses-list li:hover {
+      background: #ffcc00;
+      color: #000;
+      cursor: default;
+    }
+
+    /* Contact info */
+    .contact-info {
+      text-align: center;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #ddd;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .contact-info a {
+      margin: 0 14px;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 1rem;
+      color: #ccc;
+      padding-bottom: 25px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container {
+        padding: 35px 30px;
+        margin: 90px 15px 40px 15px;
+      }
+      header h1 {
+        font-size: 2.6rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+      nav ul {
+        gap: 18px;
+        padding: 12px 15px;
+      }
+      nav ul li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav aria-label="Primary Navigation">
+    <ul>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#internship" class="nav-link">Internship</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <!-- Home / About -->
+    <header id="home" tabindex="-1">
+      <h1>Eveline Jeffina V</h1>
+      <p>Motivated Computer Science Graduate | Problem Solver | Team Player</p>
+      <div class="contact-info" aria-label="Contact Information">
+        <span><i class="fas fa-map-marker-alt"></i> Tirupur, Tamil Nadu</span> |
+        <a href="tel:+917418382735" aria-label="Phone Number"><i class="fas fa-phone"></i> 7418382735</a> |
+        <a href="mailto:jefijo8098@gmail.com" aria-label="Email Address"><i class="fas fa-envelope"></i> jefijo8098@gmail.com</a>
+      </div>
+    </header>
+
+    <section id="about" aria-labelledby="career-objective">
+      <h2 id="career-objective">Career Objective</h2>
+      <p>A motivated and adaptable Computer Science graduate seeking an entry-level position to apply foundational programming and problem-solving skills. Eager to contribute to a dynamic team and grow in the field of technology.</p>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <ul>
+        <li><strong>B.Sc Computer Science</strong> - Kongu Arts and Science College, Erode (2025) - 76.5%</li>
+        <li><strong>HSC</strong> - Thirumurugan Matric Hr Sec School, Tirupur (2022) - 79%</li>
+        <li><strong>SSLC</strong> - Thirumurugan Matric Hr Sec School, Tirupur (2020) - 88.8%</li>
+      </ul>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="skills-list" aria-label="Skills List">
+        <li>Basic Programming</li>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Adaptability</li>
+        <li>Time Management</li>
+      </ul>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Project</h2>
+      <p><strong>Smart School Entry Notification and Live Location Tracking</strong> - An IoT-based system to send real-time student entry notifications and live school location updates to parents.</p>
+    </section>
+
+    <section id="internship" aria-labelledby="internship-title">
+      <h2 id="internship-title">Internship</h2>
+      <p><strong>Web Development Intern</strong> – Nxtlogic Software, Coimbatore (2024)</p>
+      <p>Worked on front-end development basics and web-based project support during academic break.</p>
+    </section>
+
+    <section id="achievements" aria-labelledby="achievements-title">
+      <h2 id="achievements-title">Participation & Achievements</h2>
+      <ul>
+        <li>Poster Designing – Sri Ramakrishna Arts and Science College, Coimbatore</li>
+        <li>Debugging – Sri Venkateshwara Arts and Science College, Gobichettipalayam</li>
+      </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Languages & Courses</h2>
+      <h3>Languages Known</h3>
+      <ul class="languages-list" aria-label="Languages List">
+        <li>Tamil</li>
+        <li>English</li>
+      </ul>
+      <h3>Courses</h3>
+      <ul class="courses-list" aria-label="Courses List">
+        <li>System and Network Administration (2023 – 2024)</li>
+        <li>Cloud and Internet of Things (IoT) (2024 – 2025)</li>
+      </ul>
+      <h3>Extra-Curricular Activities</h3>
+      <p>Participated in Intramural Tournament – Carrom (Runner-Up) at Kongu Arts and Science College</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2024 Eveline Jeffina V. All information is true to the best of my knowledge.</p>
+  </footer>
+
+  <script>
+    // Highlight nav links on scroll
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 90;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
